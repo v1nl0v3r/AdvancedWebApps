@@ -14,6 +14,7 @@ import {
 } from "react-bootstrap";
 import { useState } from "react";
 import type IOrderData from "../Interfaces/IOrderData";
+import postTrip from "../Functions/PostTrip";
 
 function Main({
   listOfTrips,
@@ -132,7 +133,11 @@ function Main({
           </Col>
         </FormGroup>
       </Form>
-      <Button /* just for testing onClick={() => console.log(orderData)}*/>
+      <Button
+        onClick={() =>
+          postTrip(orderData)
+        } /* just for testing onClick={() => console.log(orderData)}*/
+      >
         Send an order
       </Button>
     </>
